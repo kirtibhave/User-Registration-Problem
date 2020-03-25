@@ -42,4 +42,15 @@ public class UserRegistrationTest {
         Assert.assertEquals(false,lastNameCheck);
     }
 
+    @Test
+    public void givenMobileFormat_WhenProper_ShouldReturnTrue(){
+        boolean mobileCheck=registration.validMobile("91 9876589890");
+        Assert.assertEquals(true,mobileCheck);
+    }
+
+    @Test
+    public void givenMobileFormat_WhenNotProper_ShouldReturnFalse(){
+        boolean mobileCheck = registration.validMobile("5789898902");
+        Assert.assertEquals(false,mobileCheck);
+    }
 }
