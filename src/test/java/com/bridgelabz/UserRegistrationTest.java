@@ -77,4 +77,18 @@ public class UserRegistrationTest {
         boolean password1 = registration.minimumCharacterMethod("jlkk");
         Assert.assertEquals(false, password1);
     }
+
+    @Test
+    public void givenPasswordFormat_WhenSatisfiesRule2_ShouldReturnTrue() {
+        boolean password2 = registration.upperCaseMethod("hHjhkjlklk");
+        Assert.assertEquals(true, password2);
+    }
+
+    @Test
+    public void givenPasswordFormat_WhenNotSatisfiesRule2_ShouldReturnFalse() {
+        boolean password2 = registration.upperCaseMethod("ckldjll");
+        Assert.assertEquals(false, password2);
+    }
+
+
 }
