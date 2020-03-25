@@ -1,5 +1,6 @@
 package com.bridgelabz;
 
+import com.sun.tools.javac.comp.Check;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -33,13 +34,25 @@ public class UserRegistrationTest {
     @Test
     public void givenLastName_WhenProper_ShouldReturnTrue() {
         boolean lastNameCheck = registration.validLastName("Bhave");
-        Assert.assertEquals(true,lastNameCheck);
+        Assert.assertEquals(true, lastNameCheck);
     }
 
     @Test
     public void givenLastName_WhenNotProper_ShouldReturnTrue() {
-        boolean lastNameCheck=registration.validLastName("Bj");
-        Assert.assertEquals(false,lastNameCheck);
+        boolean lastNameCheck = registration.validLastName("Bj");
+        Assert.assertEquals(false, lastNameCheck);
+    }
+
+    @Test
+    public void givenEmail_WhenProper_ShouldReturnTrue() {
+        boolean emailCheck = registration.validEmail("abc.xyz@bI.co.in");
+        Assert.assertEquals(true, emailCheck);
+    }
+
+    @Test
+    public void givenEmail_WhenNotProper_ShouldReturnFalse() {
+        boolean emailCheck = registration.validEmail("xyz.com");
+        Assert.assertEquals(false,emailCheck);
     }
 
 }
