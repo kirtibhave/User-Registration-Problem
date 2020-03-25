@@ -7,6 +7,7 @@ public class UserRegistration {
     String minimumCharacterRule = "^[a-zA-Z]{8,}";
     String upperCaseRule = "^(?=.*[A-Z])[A-Za-z]{8,}$";
     String numericNumberRule = "^((?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])).{8,}$";
+    String specialCharacterRule = "^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=[^$@!#%*?&]*[$#@!%*?&][^$@!#%*?&]*$).{8,}";
 
     public boolean welcomeMessage(String message) {
         return  message.contains("user");
@@ -38,5 +39,9 @@ public class UserRegistration {
 
     public boolean numericNumberMethod(String numericNumber) {
         return numericNumber.matches(numericNumberRule);
+    }
+
+    public boolean specialCharacterMethod(String specialCharacter) {
+        return specialCharacter.matches(specialCharacterRule);
     }
 }

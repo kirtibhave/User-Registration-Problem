@@ -102,5 +102,18 @@ public class UserRegistrationTest {
         Assert.assertEquals(false, password3);
     }
 
+    @Test
+    public void givenPasswordFormat_WhenSatisfiesRule4_ShouldReturnTrue(){
+        boolean password4 = registration.specialCharacterMethod("ghhgF@hj12");
+        Assert.assertEquals(true,password4);
+    }
+
+    @Test
+    public void givenPasswordFormat_WhenNotSatisfiesRule4_ShouldReturnFalse(){
+        boolean password4 = registration.specialCharacterMethod("bkjhddfW12");
+        Assert.assertEquals(false,password4);
+    }
 
 }
+
+
