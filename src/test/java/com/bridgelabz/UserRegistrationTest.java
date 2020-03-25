@@ -37,9 +37,21 @@ public class UserRegistrationTest {
     }
 
     @Test
-    public void givenLastName_WhenNotProper_ShouldReturnTrue() {
+    public void givenLastName_WhenNotProper_ShouldReturnFalse() {
         boolean lastNameCheck=registration.validLastName("Bj");
         Assert.assertEquals(false,lastNameCheck);
+    }
+
+    @Test
+    public void givenEmail_WhenProper_ShouldReturnTrue() {
+        boolean emailCheck = registration.validEmail("abc.xyz@bI.co.in");
+        Assert.assertEquals(true, emailCheck);
+    }
+
+    @Test
+    public void givenEmail_WhenNotProper_ShouldReturnFalse() {
+        boolean emailCheck = registration.validEmail("abc@.co.in");
+        Assert.assertEquals(false, emailCheck);
     }
 
     @Test
