@@ -76,6 +76,5 @@ public class UserRegistrationTest {
     public void givenPasswordFormat_WhenNotSatisfiesRule1_ShouldReturnFalse() {
         boolean password1 = registration.minimumCharacterMethod("jlkk");
         Assert.assertEquals(false, password1);
-
     }
 }
