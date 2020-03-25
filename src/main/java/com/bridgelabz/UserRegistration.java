@@ -6,6 +6,7 @@ public class UserRegistration {
     String emailRule = "^[a-zA-Z]{3,}([+|-|.|_]?[a-zA-Z0-9]+)?[@]{1}[a-zA-Z0-9]+[.]{1}[a-zA-Z]{2,4}([.]{1}[a-zA-Z]+)?$";
     String minimumCharacterRule = "^[a-zA-Z]{8,}";
     String upperCaseRule = "^(?=.*[A-Z])[A-Za-z]{8,}$";
+    String numericNumberRule = "^((?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])).{8,}$";
 
     public boolean welcomeMessage(String message) {
         return  message.contains("user");
@@ -33,5 +34,9 @@ public class UserRegistration {
 
     public boolean upperCaseMethod(String upperCaseCharacter) {
         return upperCaseCharacter.matches(upperCaseRule);
+    }
+
+    public boolean numericNumberMethod(String numericNumber) {
+        return numericNumber.matches(numericNumberRule);
     }
 }

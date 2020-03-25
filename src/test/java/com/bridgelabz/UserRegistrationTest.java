@@ -90,5 +90,17 @@ public class UserRegistrationTest {
         Assert.assertEquals(false, password2);
     }
 
+    @Test
+    public void givenPasswordFormat_WhenSatisfiesRule3_ShouldReturnTrue() {
+        boolean password3 = registration.numericNumberMethod("gvDhhjhkj9");
+        Assert.assertEquals(true, password3);
+    }
+
+    @Test
+    public void givenPasswordFormat_WhenNotSatisfiesRule3_ShouldReturnFalse() {
+        boolean password3 = registration.numericNumberMethod("djkdUvhjnc");
+        Assert.assertEquals(false, password3);
+    }
+
 
 }
