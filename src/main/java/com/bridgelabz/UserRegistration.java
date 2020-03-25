@@ -10,4 +10,8 @@ public class UserRegistration {
     public boolean validFirstName(String firstName) {
         return firstName.matches(nameRule);
     }
+
+    public boolean validLastName(String lastName) {
+        return lastName.matches(nameRule);
+    }
 }

@@ -29,4 +29,17 @@ public class UserRegistrationTest {
         boolean firstNameCheck = registration.validFirstName("sjklrwstffi");
         Assert.assertEquals(false, firstNameCheck);
     }
+
+    @Test
+    public void givenLastName_WhenProper_ShouldReturnTrue() {
+        boolean lastNameCheck = registration.validLastName("Bhave");
+        Assert.assertEquals(true,lastNameCheck);
+    }
+
+    @Test
+    public void givenLastName_WhenNotProper_ShouldReturnTrue() {
+        boolean lastNameCheck=registration.validLastName("Bj");
+        Assert.assertEquals(false,lastNameCheck);
+    }
+
 }
