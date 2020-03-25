@@ -33,13 +33,13 @@ public class UserRegistrationTest {
     @Test
     public void givenLastName_WhenProper_ShouldReturnTrue() {
         boolean lastNameCheck = registration.validLastName("Bhave");
-        Assert.assertEquals(true,lastNameCheck);
+        Assert.assertEquals(true, lastNameCheck);
     }
 
     @Test
     public void givenLastName_WhenNotProper_ShouldReturnFalse() {
-        boolean lastNameCheck=registration.validLastName("Bj");
-        Assert.assertEquals(false,lastNameCheck);
+        boolean lastNameCheck = registration.validLastName("Bj");
+        Assert.assertEquals(false, lastNameCheck);
     }
 
     @Test
@@ -55,14 +55,27 @@ public class UserRegistrationTest {
     }
 
     @Test
-    public void givenMobileFormat_WhenProper_ShouldReturnTrue(){
-        boolean mobileCheck=registration.validMobile("91 9876589890");
-        Assert.assertEquals(true,mobileCheck);
+    public void givenMobileFormat_WhenProper_ShouldReturnTrue() {
+        boolean mobileCheck = registration.validMobile("91 9876589890");
+        Assert.assertEquals(true, mobileCheck);
     }
 
     @Test
-    public void givenMobileFormat_WhenNotProper_ShouldReturnFalse(){
+    public void givenMobileFormat_WhenNotProper_ShouldReturnFalse() {
         boolean mobileCheck = registration.validMobile("5789898902");
-        Assert.assertEquals(false,mobileCheck);
+        Assert.assertEquals(false, mobileCheck);
+    }
+
+    @Test
+    public void givenPasswordFormat_WhenSatisfiesRule1_ShouldReturnTrue() {
+        boolean password1 = registration.minimumCharacterMethod("jihjjhjkj");
+        Assert.assertEquals(true, password1);
+    }
+
+    @Test
+    public void givenPasswordFormat_WhenNotSatisfiesRule1_ShouldReturnFalse() {
+        boolean password1 = registration.minimumCharacterMethod("jlkk");
+        Assert.assertEquals(false, password1);
+
     }
 }
